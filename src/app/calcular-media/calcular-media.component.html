@@ -1,28 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .calcular-media {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #3498db;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
 <div class="calcular-media">
-  <div class="input-container">
-    <label for="ac1">AC1:</label>
-    <input placeholder="Insira aqui sua nota AC1" type="number" id="ac1" [(ngModel)]="ac1">
-  </div>
+    <div class="input-container">
+        <label for="ac1">AC1:</label>
+        <input placeholder="Insira aqui sua nota AC1" type="number" id="ac1" [(ngModel)]="ac1">
+    </div>
 
-  <div class="input-container">
-    <label for="ac2">AC2:</label>
-    <input placeholder="Insira aqui sua nota AC2" type="number" id="ac2" [(ngModel)]="ac2">
-  </div>
+    <div class="input-container">
+        <label for="ac2">AC2:</label>
+        <input placeholder="Insira aqui sua nota AC2" type="number" id="ac2" [(ngModel)]="ac2">
+    </div>
 
-  <div class="input-container">
-    <label for="ag">AG:</label>
-    <input placeholder="Insira aqui sua nota AG" type="number" id="ag" [(ngModel)]="ag">
-  </div>
+    <div class="input-container">
+        <label for="ag">AG:</label>
+        <input placeholder="Insira aqui sua nota AG" type="number" id="ag" [(ngModel)]="ag">
+    </div>
 
-  <div class="input-container">
-    <label for="af">AF:</label>
-    <input placeholder="Insira aqui sua nota AF" type="number" id="af" [(ngModel)]="af">
-  </div>
+    <div class="input-container">
+        <label for="af">AF:</label>
+        <input placeholder="Insira aqui sua nota AF" type="number" id="af" [(ngModel)]="af">
+    </div>
 
-  <button (click)="calcularMedia()">Calcular</button>
+    <button (click)="calcularMedia()">Calcular</button>
 
-  <div *ngIf="media !== null">
-    <p>Média Final: {{ media }}</p>
-    <p>Resultado: {{ resultado }}</p>
-  </div>
+    <div *ngIf="media !== null">
+        <p>Média Final: {{ media }}</p>
+        <p>Resultado: {{ resultado }}</p>
+    </div>
 </div>
+
+</body>
+</html>

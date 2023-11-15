@@ -10,7 +10,7 @@ export class ApoliceSeguroComponent {
   sexo: string = 'masculino';
   idade: number;
   valorAutomovel: number;
-  valorApolice: number | null = null;
+  valorApolice: number | undefined; // Inicializando com undefined
 
   calcularApolice() {
     if (this.sexo === 'masculino') {

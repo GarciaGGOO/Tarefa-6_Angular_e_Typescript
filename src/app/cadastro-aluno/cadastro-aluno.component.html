@@ -1,42 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cadastro-aluno {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #3498db;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .erro {
+            color: #e74c3c;
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: #3498db;
+            margin-top: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
 <div class="cadastro-aluno">
-  <div class="input-container">
     <div class="input-container">
-      <label for="nome">Nome</label>
-      <input placeholder="Insira aqui seu nome" type="text" id="nome" [(ngModel)]="nome">
+        <label for="nome">Nome</label>
+        <input placeholder="Insira aqui seu nome" type="text" id="nome" [(ngModel)]="nome">
     </div>
 
-  </div>
+    <div class="input-container">
+        <label for="ra">RA</label>
+        <input placeholder="Insira aqui seu RA" type="text" id="ra" [(ngModel)]="ra">
+    </div>
 
-  <div class="input-container">
-    <label for="ra">RA</label>
-    <input placeholder="Insira aqui seu RA" type="text" id="ra" [(ngModel)]="ra">
-  </div>
+    <div class="input-container">
+        <label for="email">E-mail:</label>
+        <input placeholder="Insira aqui seu e-mail" type="email" id="email" [(ngModel)]="email">
+    </div>
 
-  <div class="input-container">
-    <label for="email">E-mail:</label>
-    <input placeholder="Insira aqui seu e-mail" type="email" id="email" [(ngModel)]="email">
-  </div>
+    <div class="input-container">
+        <label for="cel">Celular</label>
+        <input placeholder="Insira aqui seu telefone" type="tel" id="cel" [(ngModel)]="cel">
+    </div>
 
-  <div class="input-container">
-    <label for="cel">Celular</label>
-    <input placeholder="Insira aqui seu telefone" type="tel" id="cel" [(ngModel)]="cel">
-  </div>
-
-  <div class="cadastro-aluno">
     <button (click)="verificarPreenchimento()">Cadastrar Aluno</button>
-  </div>
 
-  <div class="cadastro-aluno">
     <div *ngIf="erroPreenchimento" class="erro">Por favor, preencha todos os campos.</div>
-    <div *ngIf="mostrarDados && !erroPreenchimento">
-      <h3>Dados atuais digitados:</h3>
-      <ul>
-        <li>Nome: {{nome}}</li>
-        <li>RA: {{ra}}</li>
-        <li>E-mail: {{email}}</li>
-        <li>Celular: {{cel}}</li>
-      </ul>
-    </div>
-  </div>
 
+    <div *ngIf="mostrarDados && !erroPreenchimento">
+        <h3>Dados atuais digitados:</h3>
+        <ul>
+            <li>Nome: {{nome}}</li>
+            <li>RA: {{ra}}</li>
+            <li>E-mail: {{email}}</li>
+            <li>Celular: {{cel}}</li>
+        </ul>
+    </div>
 </div>
+
+</body>
+</html>
